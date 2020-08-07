@@ -1,0 +1,2 @@
+ALTER TABLE `products` ADD CONSTRAINT `FK_products_categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE 
+ALTER TABLE `products` ADD CONSTRAINT `FK_products_supplier` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE CASCADE 

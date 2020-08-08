@@ -63,7 +63,7 @@ class SupplierController extends Controller
      */
     public function show($id)
     {
-        $supplier=Supplier::find($id);
+        //
     }
 
     /**

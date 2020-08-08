@@ -23,3 +23,4 @@ Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::resource('suppliers', 'SupplierController');
 Route::resource('categories', 'CategoryController');
 Route::resource('products', 'ProductsController');
+Route::resource('users', 'UsersController');

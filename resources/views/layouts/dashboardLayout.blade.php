@@ -102,6 +102,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </li>
 
                 <li class="nav-item">
+                  <a href="{{route('users.index')}}" class="nav-link
+                    @if($segment=='users')
+                      active
+                    @endif
+                    ">
+                      <i class="nav-icon fas fa-users-cog"></i>
+                    <p>User Management</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
                   <a href="{{route('suppliers.index')}}" class="nav-link
                     @if($segment=='suppliers')
                       active
@@ -173,29 +184,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
+
 <!-- DataTables -->
 <script src="{{asset('public/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('public/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
+
 <!-- jQuery -->
 <script src="{{asset('public/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
@@ -216,7 +211,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('public/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
 <script src="{{asset('public/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{asset('plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+<script src="{{asset('public/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
 <script src="{{asset('public/plugins/moment/moment.min.js')}}"></script>
 <script src="{{asset('public/plugins/daterangepicker/daterangepicker.js')}}"></script>

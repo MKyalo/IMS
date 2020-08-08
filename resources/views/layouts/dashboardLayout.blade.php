@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <p>Dashboard</p>
                   </a>
                 </li>
-
+            @can('isAdmin')
                 <li class="nav-item">
                   <a href="{{route('users.index')}}" class="nav-link
                     @if($segment=='users')
@@ -111,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <p>User Management</p>
                   </a>
                 </li>
-
+            @endcan
                 <li class="nav-item">
                   <a href="{{route('suppliers.index')}}" class="nav-link
                     @if($segment=='suppliers')

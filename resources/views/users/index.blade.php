@@ -101,7 +101,7 @@ color: #ffffff  ;
 
             <div class="form-group">
                 <label for="Category">Role</label>
-                <select class="form-control" id="category_id" name="role_id"  placeholder="">
+                <select class="form-control" id="category_id" name="role"  placeholder="">
                 <option value="">Select Role</option> 
                         
                         <option value="Admin">Admin</option>
@@ -236,7 +236,7 @@ color: #ffffff  ;
 
         <div class="form-group">
                 <label for="Category">Role</label>
-                <select class="form-control" id="category_id" name="role_id"  placeholder="">
+                <select class="form-control" id="category_id" name="role"  placeholder="">
                     <option value="">Select Role</option> 
                         
                             <option value="Admin">Admin</option>

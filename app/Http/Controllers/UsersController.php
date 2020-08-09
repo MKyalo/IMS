@@ -10,7 +10,7 @@ use Gate;
 class UsersController extends Controller
 {
     
-    public function __construct()
+    public function __construct() 
     {
         $this->middleware('auth');
 
@@ -53,7 +53,9 @@ class UsersController extends Controller
     {
         $user-> name = $request->name;
         $user-> email = $request->email;
+        $user-> role= $request->role;
         $user-> password = Hash::make($request->password);
+        $user->save();
         return redirect()->route('users.index')->with('success','User Added Successfully');
         
     }
@@ -92,7 +94,7 @@ class UsersController extends Controller
         $user-> name = $request->name;
         $user-> email = $request->email;
         $user-> role = $request->role;
-
+        $user->save();
         return redirect()->route('users.index')->with('success','User Updated Successfully');
     }
 

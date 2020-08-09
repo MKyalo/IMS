@@ -19,6 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
    <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+ 
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="{{asset('public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
   <!-- iCheck -->
@@ -35,9 +36,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{asset('public/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
   <!-- Toastr -->
   <link rel="stylesheet" href="{{asset('public/plugins/toastr/toastr.min.css')}}">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="{{asset('public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+   <!-- DataTables -->
+   <link rel="stylesheet" href="{{asset('public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -185,12 +187,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 
-<!-- DataTables -->
-<script src="{{asset('public/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('public/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-
 <!-- jQuery -->
 <script src="{{asset('public/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
@@ -223,9 +219,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('public/dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('public/dist/js/pages/dashboard.js')}}"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('public/dist/js/demo.js')}}"></script>
+<!-- DataTables -->
+<script src="{{asset('public/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('public/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 </body>
 </html>

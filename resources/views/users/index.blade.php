@@ -129,7 +129,20 @@ color: #ffffff  ;
 </div> <!-- /.modal-fade -->
 <!--END OF EDIT MODAL-->
 
-<!--MODAL TO CONFIRM DELETE-->
+
+				  @endforeach
+									
+				  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                  </tr>
+                  </tfoot>
+                  <!--MODAL TO CONFIRM DELETE-->
 <div class="modal fade" id="deleteUser{{$user->id}}">
 <div class="modal-dialog">
 <div class="modal-content bg-danger">
@@ -150,18 +163,6 @@ color: #ffffff  ;
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- /. MODAL TO CONFIRM DELETE -->
-				  @endforeach
-									
-				  </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Action</th>
-                  </tr>
-                  </tfoot>
                 </table>
         
               </div>
@@ -302,10 +303,10 @@ color: #ffffff  ;
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
-      "searching": false,
+      "searching": true,
       "ordering": true,
       "info": true,
-      "autoWidth": false,
+      "autoWidth": true,
       "responsive": true,
     });
   });

@@ -10,6 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>IMS | DashBoard</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/favicon.png') }}">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('public/plugins/fontawesome-free/css/all.min.css')}}">
@@ -56,6 +57,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <p>{{ Auth::user()->name }}</p>
+          
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-header">Account Settings</span>
+          <div class="dropdown-divider"></div>
+          <a href="{{route('users.show',Auth::user()->id )}}" class="dropdown-item">
+            <i class="fas fa-user-alt mr-2"></i> Profile
+            <span class="float-right text-muted text-sm"></span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-user-cog mr-2"></i> Settings
+            <span class="float-right text-muted text-sm"></span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-power-off mr-2"></i> Log Out
+            <span class="float-right text-muted text-sm"></span>
+          </a>
+          
       </li>
     </ul>
  </nav>

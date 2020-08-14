@@ -38,6 +38,7 @@
                   <thead>
                   <tr>
                     <th>User ID</th>
+                    <th>Image</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
@@ -50,6 +51,11 @@
 				  
                   @foreach ($users as $user)
                     <td>{{$user->id}}</td>
+                    <td> <img class="table-avatar"
+                       src="{{asset('public/storage/avatars/'.$user->avatar)}}" height="40" width="40"
+                       alt="User profile picture">
+                    </td> 
+                    
 					<td>{{$user->name}}</td>
 					<td>{{$user->email}}</td>
 					<td>{{$user->role}}</td>
@@ -57,7 +63,7 @@
 							<div class="btn-group">
 								<button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">Action </button>
 									<div class="dropdown-menu">
-										 <a class="dropdown-item" href=" "data-toggle="modal" data-target="#" class="btn btn primary">View </a>
+										 <a class="dropdown-item" href="{{route('users.show',$user->id )}}" class="btn btn primary">View </a>
 										<a class="dropdown-item" href=" {{route('users.edit',$user->id)}}"data-toggle="modal" data-target="#editUser{{$user->id}}" class="btn btn primary">Edit </a>
 										<a class="dropdown-item" href="{{route('users.destroy',$user->id)}}"data-toggle="modal" data-target="#deleteUser{{$user->id}}" class="btn btn primary" >Delete </a>
 									</div>
@@ -200,7 +206,7 @@ color: #ffffff  ;
 </button>
 </div>
 <div class="modal-body">
-<form role="form" method="POST" action="{{route('users.store')}}">
+<form role="form" method="POST" action="{{route('users.store')}}" enctype="multipart/form-data">
     @csrf
     
 
@@ -247,6 +253,7 @@ color: #ffffff  ;
                 </select>
             </div>  
 
+           
         <div class="input-group mb-3">
           <input type="password" id="password" name="password" class="form-control" placeholder="Password" required autocomplete="new-password">
           <div class="input-group-append">
@@ -263,6 +270,18 @@ color: #ffffff  ;
             </div>
           </div>
         </div>
+
+        <div class="form-group">
+                    <label for="exampleInputFile">Profile Photo</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="avatar" value="avatar" name="avatar">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                      
+                    </div>
+            </div>
+
 
         <div class="row">
         <div class="col-8">

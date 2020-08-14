@@ -128,7 +128,7 @@ color: #ffffff  ;
 
             <div class="form-group">
             <label for="Description">Description</label>
-            <textarea class="form-control" rows="5" id="description" name="description"  value="{{($prod->description )}}" placeholder="">
+            <textarea class="form-control" rows="5" id="description" name="description"  value="" placeholder="">
             {{$prod->description}}
             </textarea>
             </div>

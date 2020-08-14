@@ -51,6 +51,16 @@ class UsersController extends Controller
      */
     public function store(Request $request,User $user)
     {
+       if($request->avatar->getClientOriginalName()){
+        $ext=$request->avatar->getClientOriginalExtension();
+        $file=rand(1,9999).'.'.$ext;
+        $request->avatar->storeAs('public/avatars',$file);
+       }
+       else
+       {
+           $file='';
+       }
+        $user-> avatar = $file;
         $user-> name = $request->name;
         $user-> email = $request->email;
         $user-> role= $request->role;
@@ -68,7 +78,8 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.profile');
+        $users['user']=$user;
+        return view('users.profile')->with($users);
     }
 
     /**
@@ -91,6 +102,16 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        if($request->avatar->getClientOriginalName()){
+            $ext=$request->avatar->getClientOriginalExtension();
+            $file=rand(1,9999).'.'.$ext;
+            $request->avatar->storeAs('public/avatars',$file);
+           }
+           else
+           {
+               $file='';
+           }
+        $user-> avatar = $file;
         $user-> name = $request->name;
         $user-> email = $request->email;
         $user-> role = $request->role;

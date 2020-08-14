@@ -22,7 +22,7 @@
             <!-- Default box -->
       <div class="card ">
         <div class="card-header">
-          <h3 class="card-title">Profile: {{Auth::user()->name}}</h3>
+          <h3 class="card-title">Profile: {{$user->name}}</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -39,21 +39,21 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="{{asset('public/dist/img/user4-128x128.jpg')}}"
+                       src="{{asset('public/storage/avatars/'.$user->avatar)}}"
                        alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
-                @if (auth::user()->role == 'Admin')
+                <h3 class="profile-username text-center">{{$user->name}}</h3>
+                @if ($user->role == 'Admin')
                     <p class="text-muted text-center"><span class=" badge badge-success" >Administrator</span></p>
-                @elseif (auth::user()->role== 'Sales')
+                @elseif ($user->role== 'Sales')
                     <p class="text-muted text-center"><span class=" badge badge-info" >Sales Representative</span></p>
-                @elseif (auth::user()->role== 'User')
+                @elseif ($user->role== 'User')
                     <p class="text-muted text-center"><span class=" badge badge-info" >Normal User</span></p>
                 @endif
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b><i class="fas fa-envelope mr-1"></i>Email</b> <a class="float-right">{{Auth::user()->email}}</a>
+                    <b><i class="fas fa-envelope mr-1"></i>Email</b> <a class="float-right">{{$user->email}}</a>
                   </li>
                   
                   
